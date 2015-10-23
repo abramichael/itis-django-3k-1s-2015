@@ -1,0 +1,15 @@
+<h1>POST</h1>
+<p>{{ post.txt }}</p>
+<form action="/post/{{ post.id }}/comment" method="POST">
+	{% csrf_token %}
+	<textarea name="comment_text"></textarea>
+	<input type="submit" value="send"/>
+</form>
+
+{% for c in comments %}
+
+<hr/>
+<p>{{ c.txt }}</p>
+<p>{{ c.published_at }}
+
+{% endfor %}

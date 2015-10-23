@@ -1,0 +1,16 @@
+<h1>Nya!</h1>
+
+<form action="/post/" method="POST">
+	{% csrf_token %}
+	<textarea name="post"></textarea>
+	<input type="submit" value="send"/>
+</form>
+
+{% for post in posts %}
+
+<hr/>
+<a href="/post/{{ post.id }}">Comments</a>
+<p>{{ post.txt }}</p>
+<p>{{ post.published_at }}
+
+{% endfor %}
