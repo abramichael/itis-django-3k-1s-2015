@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+    {% if results %}
+
+        {% for r in results %}
+            
+            <li>{{ r.student }} : {{ r.subject }}</li>
+
+        {% endfor %}
+
+    {% else %}
+        
+        No results..
+
+    {% endif %}
+
+{% endblock content %}
