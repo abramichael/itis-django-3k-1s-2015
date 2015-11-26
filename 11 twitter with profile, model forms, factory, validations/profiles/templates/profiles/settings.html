@@ -1,0 +1,8 @@
+<h1>Settings</h1>
+
+<form action="{% url 'settings' %}" method="POST">
+    {% csrf_token %}
+    {{ f.as_p }}
+    <input type="submit" value="save"/>
+
+</form>
