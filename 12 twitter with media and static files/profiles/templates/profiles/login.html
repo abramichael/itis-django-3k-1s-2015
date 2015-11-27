@@ -1,0 +1,11 @@
+{%for error in errors%}
+    <p>{{ error }}</p>
+{% endfor %}
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="login"/>
+<form>
