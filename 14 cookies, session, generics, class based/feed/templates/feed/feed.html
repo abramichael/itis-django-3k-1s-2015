@@ -1,0 +1,22 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}"/>
+
+<h1>Twitter</h1>
+
+<a href="{% url "logout" %}">Log out</a>
+
+<form action="{% url "tweet" %}" method="POST">
+    {% csrf_token %}
+    {{ f.as_p }}
+    <input type="submit" value="tweet"/>
+</form>
+
+{% for t in tweets %}
+
+    <p><b>{{ t.user}}</b></p>
+    <p><i>{{ t.pub_date}}</i></p>
+    {{ t.txt}}
+    <hr/>
+
+{% endfor %}

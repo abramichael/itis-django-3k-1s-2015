@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'profiles/css/style.css' %}"/>
+
+{{ form.photo }}
+<h1>Settings</h1>
+<img src = "{{ form.photo.value.url }}"/>
+<form action="{% url 'settings' %}" method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="save"/>
+
+</form>
